@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import Card from './Card';
 import { scrollerTwoData } from './scrollerTwoData';
 import useScrollerArrows from './useScrollerArrows';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const ScrollerTwo = () => {
 	const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -11,7 +12,7 @@ const ScrollerTwo = () => {
 	const handleScrollLeft = () => {
 		if (scrollContainerRef.current) {
 			scrollContainerRef.current.scrollTo({
-				left: scrollContainerRef.current.scrollLeft - 300,
+				left: scrollContainerRef.current.scrollLeft - 600,
 				behavior: 'smooth',
 			});
 		}
@@ -20,16 +21,20 @@ const ScrollerTwo = () => {
 	const handleScrollRight = () => {
 		if (scrollContainerRef.current) {
 			scrollContainerRef.current.scrollTo({
-				left: scrollContainerRef.current.scrollLeft + 300,
+				left: scrollContainerRef.current.scrollLeft + 600,
 				behavior: 'smooth',
 			});
 		}
 	};
 
 	return (
-		<div className='flex flex-col bg-white m-auto p-auto relative'>
+		<div className='flex flex-col bg-white m-auto p-auto'>
 			<div className='flex'>
-				{showLeftArrow && <button onClick={handleScrollLeft}>&lt;</button>}
+				{showLeftArrow && (
+					<button onClick={handleScrollLeft}>
+						<FaArrowLeft />
+					</button>
+				)}
 				<div
 					className='overflow-x-scroll pb-10 no-scroll-bar'
 					ref={scrollContainerRef}
@@ -40,7 +45,11 @@ const ScrollerTwo = () => {
 						))}
 					</div>
 				</div>
-				{showRightArrow && <button onClick={handleScrollRight}>&gt;</button>}
+				{showRightArrow && (
+					<button onClick={handleScrollRight}>
+						<FaArrowRight />
+					</button>
+				)}
 			</div>
 		</div>
 	);
