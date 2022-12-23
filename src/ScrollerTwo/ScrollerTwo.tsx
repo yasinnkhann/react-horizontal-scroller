@@ -36,7 +36,7 @@ const ScrollerTwo = () => {
 					</button>
 				)}
 				<div
-					className='overflow-x-scroll pb-10 no-scroll-bar'
+					className='overflow-x-scroll pb-10 no-scrollbar'
 					ref={scrollContainerRef}
 				>
 					<div className='flex flex-nowrap lg:ml-40 md:ml-20 ml-10'>

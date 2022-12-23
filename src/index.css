@@ -3,11 +3,24 @@
 @tailwind utilities;
 @layer utilities {
 	/* Chrome, Safari and Opera */
-	.no-scroll-bar::-webkit-scrollbar {
+	.scrollbar::-webkit-scrollbar {
+		width: 7px;
+	}
+
+	.scrollbar-track::-webkit-scrollbar-track {
+		background: white;
+	}
+
+	.scrollbar-thumb::-webkit-scrollbar-thumb {
+		background: black;
+		border-radius: 10px;
+	}
+
+	.no-scrollbar::-webkit-scrollbar {
 		display: none;
 	}
 
-	.no-scroll-bar {
+	.no-scrollbar {
 		-ms-overflow-style: none;
 		scrollbar-width: none;
 	}

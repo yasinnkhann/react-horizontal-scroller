@@ -40,7 +40,7 @@ const ScrollerThree = () => {
 				)}
 				<div className='container my-8'>
 					<div
-						className='flex flex-nowrap overflow-x-scroll scrolling-touch items-start mb-8'
+						className='flex flex-nowrap overflow-x-scroll items-start mb-8 scrollbar scrollbar-track scrollbar-thumb scrolling-touch'
 						ref={scrollContainerRef}
 					>
 						{scrollerThreeData.map(item => (
