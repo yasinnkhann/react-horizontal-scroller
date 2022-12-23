@@ -3,12 +3,12 @@ import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import Card from './Card';
 import { LeftArrow, RightArrow } from './Arrows';
 import useDrag from './UseDrag';
-import { Item } from './data';
+import { IScrollerOneItem } from './scrollerOneData';
 
 type scrollVisibilityApiType = React.ContextType<typeof VisibilityContext>;
 
 interface Props {
-	items: Item[];
+	items: IScrollerOneItem[];
 }
 
 function ScrollerOne({ items }: Props) {

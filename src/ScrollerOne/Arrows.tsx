@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
-
 import { VisibilityContext } from 'react-horizontal-scrolling-menu';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 function Arrow({
 	children,
@@ -51,7 +51,7 @@ export function LeftArrow() {
 
 	return (
 		<Arrow handleDisabled={disabled} handleOnClick={() => scrollPrev()}>
-			Left
+			<FaArrowLeft />
 		</Arrow>
 	);
 }
@@ -72,7 +72,7 @@ export function RightArrow() {
 
 	return (
 		<Arrow handleDisabled={disabled} handleOnClick={() => scrollNext()}>
-			Right
+			<FaArrowRight />
 		</Arrow>
 	);
 }

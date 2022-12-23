@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import { VisibilityContext } from 'react-horizontal-scrolling-menu';
-import { Item } from './data';
+import { Item } from './scrollerOneData';
 
 interface Props {
 	item: Item;

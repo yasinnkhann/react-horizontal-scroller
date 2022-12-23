@@ -1,9 +1,9 @@
-export interface Item {
+export interface IScrollerTwoItem {
 	id: number;
 	title: string;
 }
 
-export const data: Item[] = [
+export const scrollerTwoData: IScrollerTwoItem[] = [
 	{
 		id: 1,
 		title: 'Star Wars',
