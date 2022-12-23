@@ -1,26 +1,12 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import Card from './Card';
 import { scrollerTwoData } from './scrollerTwoData';
+import useScrollerArrows from './useScrollerArrows';
 
 const ScrollerTwo = () => {
 	const scrollContainerRef = useRef<HTMLDivElement>(null);
-	const [showLeftArrow, setShowLeftArrow] = useState(false);
-	const [showRightArrow, setShowRightArrow] = useState(true);
-
-	useEffect(() => {
-		const handleScroll = () => {
-			if (scrollContainerRef.current) {
-				const { scrollLeft, scrollWidth, clientWidth } =
-					scrollContainerRef.current;
-				setShowLeftArrow(scrollLeft > 0);
-				setShowRightArrow(scrollLeft + clientWidth < scrollWidth);
-			}
-		};
-		handleScroll();
-		scrollContainerRef.current?.addEventListener('scroll', handleScroll);
-		return () =>
-			scrollContainerRef.current?.removeEventListener('scroll', handleScroll);
-	}, []);
+	const { showLeftArrow, showRightArrow } =
+		useScrollerArrows(scrollContainerRef);
 
 	const handleScrollLeft = () => {
 		if (scrollContainerRef.current) {
