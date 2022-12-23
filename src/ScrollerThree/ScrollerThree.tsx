@@ -29,10 +29,15 @@ const ScrollerThree = () => {
 
 	return (
 		<div className='container flex-grow w-full py-4 sm:py-16 mx-auto px-0'>
-			<button onClick={handleScrollLeft}>
-				<FaArrowLeft />
-			</button>
-			<div className='mx-auto w-full md:w-4/5 px-4'>
+			<div className='mx-auto w-full md:w-4/5 px-4 relative'>
+				{showLeftArrow && (
+					<button
+						className='absolute top-[50%] left-0'
+						onClick={handleScrollLeft}
+					>
+						<FaArrowLeft />
+					</button>
+				)}
 				<div className='container my-8'>
 					<div
 						className='flex flex-no-wrap overflow-x-scroll scrolling-touch items-start mb-8'
@@ -43,10 +48,15 @@ const ScrollerThree = () => {
 						))}
 					</div>
 				</div>
+				{showRightArrow && (
+					<button
+						className='absolute top-[50%] right-0'
+						onClick={handleScrollRight}
+					>
+						<FaArrowRight />
+					</button>
+				)}
 			</div>
-			<button onClick={handleScrollRight}>
-				<FaArrowRight />
-			</button>
 		</div>
 	);
 };
