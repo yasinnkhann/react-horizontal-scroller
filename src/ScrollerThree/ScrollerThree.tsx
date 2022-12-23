@@ -28,8 +28,8 @@ const ScrollerThree = () => {
 	};
 
 	return (
-		<div className='container flex-grow w-full py-4 sm:py-16 mx-auto px-0'>
-			<div className='mx-auto w-full md:w-4/5 px-4 relative'>
+		<div className='container flex-grow w-full mx-auto'>
+			<div className='mx-auto w-full md:w-4/5 px-16 relative'>
 				{showLeftArrow && (
 					<button
 						className='absolute top-[50%] left-0'
@@ -40,7 +40,7 @@ const ScrollerThree = () => {
 				)}
 				<div className='container my-8'>
 					<div
-						className='flex flex-no-wrap overflow-x-scroll scrolling-touch items-start mb-8'
+						className='flex flex-nowrap overflow-x-scroll scrolling-touch items-start mb-8'
 						ref={scrollContainerRef}
 					>
 						{scrollerThreeData.map(item => (

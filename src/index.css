@@ -6,8 +6,13 @@
 	.no-scroll-bar::-webkit-scrollbar {
 		display: none;
 	}
+
 	.no-scroll-bar {
 		-ms-overflow-style: none;
 		scrollbar-width: none;
+	}
+
+	.scrolling-touch {
+		-webkit-overflow-scrolling: touch;
 	}
 }

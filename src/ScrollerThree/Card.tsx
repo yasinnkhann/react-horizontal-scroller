@@ -6,7 +6,7 @@ interface Props {
 
 const Card = ({ item }: Props) => {
 	return (
-		<div className='flex-none w-2/3 md:w-1/3 mr-8 md:pb-4 border rounded-lg'>
+		<div className='flex-none w-2/3 md:w-1/3 mr-8 md:pb-4 border rounded-lg h-[35rem]'>
 			<a href='#' className='space-y-4'>
 				<div className='aspect-w-16 aspect-h-9'>
 					<img
