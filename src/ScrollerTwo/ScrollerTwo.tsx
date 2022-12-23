@@ -1,9 +1,26 @@
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Card from './Card';
 import { scrollerTwoData } from './scrollerTwoData';
 
 const ScrollerTwo = () => {
 	const scrollContainerRef = useRef<HTMLDivElement>(null);
+	const [showLeftArrow, setShowLeftArrow] = useState(false);
+	const [showRightArrow, setShowRightArrow] = useState(true);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			if (scrollContainerRef.current) {
+				const { scrollLeft, scrollWidth, clientWidth } =
+					scrollContainerRef.current;
+				setShowLeftArrow(scrollLeft > 0);
+				setShowRightArrow(scrollLeft + clientWidth < scrollWidth);
+			}
+		};
+		handleScroll();
+		scrollContainerRef.current?.addEventListener('scroll', handleScroll);
+		return () =>
+			scrollContainerRef.current?.removeEventListener('scroll', handleScroll);
+	}, []);
 
 	const handleScrollLeft = () => {
 		if (scrollContainerRef.current) {
@@ -26,7 +43,7 @@ const ScrollerTwo = () => {
 	return (
 		<div className='flex flex-col bg-white m-auto p-auto relative'>
 			<div className='flex'>
-				<button onClick={handleScrollLeft}>&lt;</button>
+				{showLeftArrow && <button onClick={handleScrollLeft}>&lt;</button>}
 				<div
 					className='overflow-x-scroll pb-10 no-scroll-bar'
 					ref={scrollContainerRef}
@@ -37,7 +54,7 @@ const ScrollerTwo = () => {
 						))}
 					</div>
 				</div>
-				<button onClick={handleScrollRight}>&gt;</button>
+				{showRightArrow && <button onClick={handleScrollRight}>&gt;</button>}
 			</div>
 		</div>
 	);
