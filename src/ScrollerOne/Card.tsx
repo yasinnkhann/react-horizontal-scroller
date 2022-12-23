@@ -1,9 +1,9 @@
 import { useContext } from 'react';
 import { VisibilityContext } from 'react-horizontal-scrolling-menu';
-import { Item } from './scrollerOneData';
+import { IScrollerOneItem } from './scrollerOneData';
 
 interface Props {
-	item: Item;
+	item: IScrollerOneItem;
 	handleItemClick: (id: string) => void;
 	selected: boolean;
 }

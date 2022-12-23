@@ -3,15 +3,11 @@ import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
 import Card from './Card';
 import { LeftArrow, RightArrow } from './Arrows';
 import useDrag from './UseDrag';
-import { IScrollerOneItem } from './scrollerOneData';
+import { scrollerOneData } from './scrollerOneData';
 
 type scrollVisibilityApiType = React.ContextType<typeof VisibilityContext>;
 
-interface Props {
-	items: IScrollerOneItem[];
-}
-
-function ScrollerOne({ items }: Props) {
+function ScrollerOne() {
 	const { dragStart, dragStop, dragMove, dragging } = useDrag();
 
 	const [selected, setSelected] = useState<string>('');
@@ -58,7 +54,7 @@ function ScrollerOne({ items }: Props) {
 			onMouseUp={() => dragStop}
 			onMouseMove={handleDrag}
 		>
-			{items.map(item => (
+			{scrollerOneData.map(item => (
 				<Card
 					key={item.id}
 					item={item}
