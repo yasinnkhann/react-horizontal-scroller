@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import Card from './Card';
-import { scrollerThreeData } from './scrollerThreeData';
 import useScrollerArrows from './useScrollerArrows';
+import { scrollerThreeData } from './scrollerThreeData';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const ScrollerThree = () => {
