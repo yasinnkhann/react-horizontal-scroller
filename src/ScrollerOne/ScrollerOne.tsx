@@ -54,6 +54,7 @@ function ScrollerOne() {
 			onMouseDown={() => dragStart}
 			onMouseUp={() => dragStop}
 			onMouseMove={handleDrag}
+			scrollContainerClassName='pb-8 scrollbar scrollbar-track scrollbar-thumb'
 		>
 			{scrollerOneData.map(item => (
 				<Card
